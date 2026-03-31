@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CODIFIN | Bienvenida</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+/* BODY */
+
+body{
+min-height:100vh;
+/*display:flex;
+justify-content:center;
+align-items:stretch;*/
+margin: 0;
+background:#f5f5f5;
+
+}
+
+/* CONTENEDOR */
+
+.container{
+display:flex;
+width:100%;
+/*max-width:1100px;*/
+background:white;
+min-height:100dvh;
+/*border-radius:10px;*/
+overflow:hidden;
+/*box-shadow:0 10px 30px rgba(0,0,0,0.1);*/
+
+}
+
+/* IMAGEN (IZQUIERDA) */
+
+
+.image-panel{
+flex:0 0 auto; /* 🔥 NO forzar tamaño */
+display:flex;
+align-items:center;
+justify-content:center;
+background:#ffffff;
+}
+
+.image-panel img{
+width:auto;
+height:120vh; /* 🔥 la imagen manda altura */
+object-fit:contain;
+display:block;
+}
+/*.image-panel::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(160deg,#1a8338 25%, transparent 25%);
+z-index:1;
+}*/
+
+/* CONTENIDO */
+
+
+.content{
+flex:1 1 50%;
+padding:clamp(20px, 5vw, 60px);
+
+display:flex;
+flex-direction:column;
+
+/* 🔥 CENTRADO PROFESIONAL */
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+/* BLOQUE SUPERIOR (MÓVIL) */
+
+.top-section{
+display:none;
+}
+
+/* TITULO */
+
+.title{
+/*font-size:clamp(20px, 3vw, 30px);
+font-weight:bold;
+color:#1a8338;
+margin-bottom:15px;*/
+font-size: 40px;
+color:#82CD00 ;
+letter-spacing: 0;
+text-align: center;
+font-weight: 550;
+margin-bottom: 50px;
+}
+
+
+    
+
+/* TEXTO */
+
+.subtitle{
+font-size:18px;
+color:#555;
+margin-bottom:100px;
+
+}
+
+/* BOTÓN */
+
+button{
+width:260px;
+height:48px;
+background:#1f7636;
+border:none;
+border-radius:6px;
+color:white;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:all 0.25s ease;
+
+display:block;
+margin:20px auto 0;
+
+flex:0 0 auto;
+}
+
+button:hover{
+background:#20863c;
+transform:translateY(-1px);
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+button:active{
+transform:translateY(0);
+box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+
+.desktop-title{
+display:block;
+}
+
+.bottom-section{
+display:block;
+order:2;
+}
+
+/* ================= */
+/* RESPONSIVE */
+/* ================= */
+
+@media (max-width:480px){
+
+.desktop-title{
+display:none;
+}
+.title {
+font-size: 24px;
+color:#82CD00 ;
+letter-spacing: 0;
+text-align: center;
+font-weight: 550;
+margin-bottom: 50px;
+}
+
+.top-section{
+display:flex;
+}
+
+.container{
+flex-direction:column;
+}
+
+.image-panel{
+display:none;
+}
+
+.image-panel img{
+object-fit:cover;
+}
+
+.top-section{
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+width:100%;
+}
+
+.top-section img{
+width:clamp(170px, 35vw, 200px);
+height:auto;
+object-fit:contain;
+}
+
+.content > .title{
+display:none;
+}
+
+.content{
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
+padding:0px;
+}
+
+.subtitle{
+margin-top:10px;
+}
+
+button{
+width:290px;
+height:48px;
+margin-top:20px;
+flex:0 0 auto;
+background-color:#1f7636;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="container">
+
+    <!-- IMAGEN IZQUIERDA (DESKTOP) -->
+    <div class="image-panel">
+        <img src="Spejo.png">
+    </div>
+
+
+<div class="content">
+
+    <!-- BLOQUE SUPERIOR -->
+    <div class="top-section">
+        <img src="Spejo.png">
+       
+        <div class="title">  ¡Digitalizamos tu experiencia!</div>
+    </div>
+
+    <!-- BLOQUE INFERIOR -->
+    <div class="bottom-section">
+        <div class="title desktop-title">  ¡Digitalizamos tu experiencia!</div>
+
+        <div class="subtitle">
+            Realiza tu registro
+        </div>
+
+       <button onclick="ingresar()">
+Ingresa a la banca y Participa
+</button>
+    </div>
+
+</div>
+
+<script>
+function ingresar(){
+
+// 🧹 LIMPIAR SESIÓN ANTERIOR
+localStorage.clear();
+
+// 🚀 ENTRAR AL SISTEMA
+window.location.href = "https://banfin-production.up.railway.app";
+
+}
+</script>
+
+</body>
+</html>
